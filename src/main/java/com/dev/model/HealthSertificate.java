@@ -24,17 +24,41 @@ public class HealthSertificate {
     @Column(name = "expiry_date")
     private String expiryDate;
 
-//    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    @PrimaryKeyJoinColumn(name = "id", referencedColumnName = "id_disease")
-//    private Disease disease;
-//
-//    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    @PrimaryKeyJoinColumn(name = "id", referencedColumnName = "id_doctor")
-//    private Doctor doctor;
-//
-//    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    @PrimaryKeyJoinColumn(name = "id", referencedColumnName = "id_patient")
-//    private Patient patient;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @PrimaryKeyJoinColumn(name = "id", referencedColumnName = "id_disease")
+    private Disease disease;
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @PrimaryKeyJoinColumn(name = "id", referencedColumnName = "id_doctor")
+    private Doctor doctor;
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @PrimaryKeyJoinColumn(name = "id", referencedColumnName = "id_patient")
+    private Patient patient;
+
+    public Disease getDisease() {
+        return disease;
+    }
+
+    public void setDisease(Disease disease) {
+        this.disease = disease;
+    }
+
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
+    }
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
 
     public int getId() {
         return id;
